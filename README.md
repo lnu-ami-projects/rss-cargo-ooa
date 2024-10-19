@@ -149,47 +149,47 @@ PDF варіант [тут](https://github.com/lnu-ami-projects/rss-cargo-ooa/bl
 
 ## Діаграма послідовностей
 
-Усі діаграми [тут](sequence/full.svg).
+Усі діаграми [тут](https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/full.svg).
 
 ### Реєстрація
 
 <p align="center">
-	<img src="sequence/1.png" alt="Реєстрація"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/1.png" alt="Реєстрація"/>
 </p>
 
 ### Вхід
 
 <p align="center">
-	<img src="sequence/2.png" alt="Вхід"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/2.png" alt="Вхід"/>
 </p>
 
 ### Додавання і перегляд RSS стрічок
 
 <p align="center">
-	<img src="sequence/3.png" alt="Додавання і перегляд RSS стрічок"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/3.png" alt="Додавання і перегляд RSS стрічок"/>
 </p>
 
 ### Підписка на контейнери
 
 <p align="center">
-	<img src="sequence/4.png" alt="Підписка на контейнери"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/4.png" alt="Підписка на контейнери"/>
 </p>
 
 ## Діаграми сутностей
 
-Усі діаграми [тут](er_diagram/er-diagram.pdf).
+Усі діаграми [тут](https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/er_diagram/er-diagram.pdf).
 
 
 ### Нотація Пітера Чена
 
 <p align="center">
-	<img src="er_diagram/er2.jpg" alt="Нотація Пітера Чена"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/er_diagram/er2.jpg" alt="Нотація Пітера Чена"/>
 </p>
 
 ### Нотація "Вороняча лапка"
 
 <p align="center">
-	<img src="er_diagram/er1.jpg" alt="Нотація "Вороняча лапка""/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/er_diagram/er1.jpg" alt="Нотація "Вороняча лапка""/>
 </p>
 
 ## Макет
@@ -347,47 +347,47 @@ PDF варіант [тут](https://github.com/lnu-ami-projects/rss-cargo-ooa/bl
 
 ## Діаграма послідовностей
 
-Усі діаграми [тут](sequence/full.svg).
+Усі діаграми [тут](https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/full.svg).
 
 ### Реєстрація
 
 <p align="center">
-	<img src="sequence/1.png" alt="Реєстрація"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/1.png" alt="Реєстрація"/>
 </p>
 
 ### Вхід
 
 <p align="center">
-	<img src="sequence/2.png" alt="Вхід"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/2.png" alt="Вхід"/>
 </p>
 
 ### Додавання і перегляд RSS стрічок
 
 <p align="center">
-	<img src="sequence/3.png" alt="Додавання і перегляд RSS стрічок"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/3.png" alt="Додавання і перегляд RSS стрічок"/>
 </p>
 
 ### Підписка на контейнери
 
 <p align="center">
-	<img src="sequence/4.png" alt="Підписка на контейнери"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/sequence/4.png" alt="Підписка на контейнери"/>
 </p>
 
 ## Діаграми сутностей
 
-Усі діаграми [тут](er_diagram/er-diagram.pdf).
+Усі діаграми [тут](https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/er_diagram/er-diagram.pdf).
 
 
 ### Нотація Пітера Чена
 
 <p align="center">
-	<img src="er_diagram/er2.jpg" alt="Нотація Пітера Чена"/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/er_diagram/er2.jpg" alt="Нотація Пітера Чена"/>
 </p>
 
 ### Нотація "Вороняча лапка"
 
 <p align="center">
-	<img src="er_diagram/er1.jpg" alt="Нотація "Вороняча лапка""/>
+	<img src="https://github.com/lnu-ami-projects/rss-cargo-ooa/blob/main/docs/docs/er_diagram/er1.jpg" alt="Нотація "Вороняча лапка""/>
 </p>
 
 ## Діаграма архітектури
