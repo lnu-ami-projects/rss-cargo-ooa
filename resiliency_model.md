@@ -1,0 +1,19 @@
+# Resiliency Model for RSS Cargo
+
+## Component Interaction Diagram (CID)
+
+### Опис
+
+CID (Component Interaction Diagram) демонструє основні компоненти системи RSS Cargo та їхню взаємодію. Це допомагає зрозуміти архітектуру додатка та його зв’язки із зовнішніми системами.
+
+![Component Interaction Diagram](https://www.plantuml.com/plantuml/png/dPDBJiCm48RtFiKegtPHZe1Q-f0g8HGI48kgYwap3HQfNOsTYeUGU2ou0wT0h5XnXkH6k6c1WXHHkhGz-R_F_fMsTSWkdsN2APSHTCriRZHf1qFjY54wPJJq5AQCCsXqXxqcJ0r35CVGHKuDH6HLfaZBAo7yk3yxjSI05eBYkNWlxugtyhvyA1-Br-AbV0g4DWb1S4OJY8aNnC5orYzNAxWH0AC16u_N2JGYlFQH8QPacsDejVPXT83oeZhhnE7UKV_4IpCrn-9s7TsPppCbiJBVGFZjJKHDoWhHGuSJj0IDq5YNCiN7XvxmrsSH9ShwLq9vJbkCzoyTiSPi-PgLgP9al-ynr5D6wpYNBcSAAkqQirLUx0nZIXxyK-NtkIV8pEG919y6N_IAKcUslgJV6X0b4B9Pg8IuKXPLwtwWjZonMwix5VMlcdOgQRiYsZxM_rmV)
+
+---
+
+## Recovery Management Architecture (RMA)
+
+### Опис
+
+RMA (Recovery Management Architecture) описує, як система відновлюється після збоїв. Вона включає резервні сервери, реплікацію даних і налаштування failover для мінімізації простоїв.
+
+![Recovery Management Architecture](https://www.plantuml.com/plantuml/png/TLEzJiCm4Dxz5ATCCBGFm83QD32r4ag462g6mpbQIwvTEIwYGaZy3Bm3Ju6Oc7Y6v8rmWnN5LRp5ttq_TsTdKbaqThUHp0eh2NBY-e7C7XQeS4KRKXQcXg-59MvtXk0aNqnFuLuRo8i2PcXMcZ7arW7N5Hd02fBwi_vjNkgVvhLvQzxhx_gh-KYOqYL1CjTOGeeI5IUJ7EZp59uOmFBAY0swv1kwWuACw-8MHgDpM1R4jIgFIkpP6qwtMoauMg4Lp77lJHtQ7a9hXqQiVIcqpj1Yp_Dm733Dqj0pfxQX7jvdpv2lAMHwh8kzUBHa54h8Q4kg9CK5LMq7hlAVtL7S9RGfWbDrS63j9JZtmNso-987LiIYUnkOFKuEHuyJerCDTpqUnvu6dC4b2gdTTnWMaVfIL9gbeJAyO2_BgNk6B9muL7diI34XLRgVy0y0)
