@@ -1,0 +1,54 @@
+@startuml
+title RSS Cargo Deployment Model on Azure
+
+cloud "Internet" {
+  [User] --> [Azure DNS]
+}
+
+rectangle "Azure Infrastructure" {
+  cloud "Azure DNS" {
+    [Azure DNS] --> [Azure Application Gateway]
+  }
+
+  rectangle "App Services" {
+    node "Web Tier" {
+      [Azure Web App 1]
+      [Azure Web App 2]
+    }
+    node "App Tier" {
+      [Azure App Service 1]
+      [Azure App Service 2]
+    }
+  }
+
+  rectangle "Data Tier" {
+    database "Azure SQL Database (Primary)" as SQLPrimary
+    database "Azure SQL Database (Replica)" as SQLReplica
+    queue "Azure Cache for Redis" as RedisCache
+  }
+
+  storage "Azure Blob Storage" as BlobStorage
+  storage "Azure CDN" as AzureCDN
+}
+
+rectangle "Monitoring and Notifications" {
+  [Azure Monitor]
+  [Azure Service Health Notifications]
+}
+
+[Azure Application Gateway] --> [Azure Web App 1]
+[Azure Application Gateway] --> [Azure Web App 2]
+[Azure Web App 1] --> [Azure App Service 1]
+[Azure Web App 2] --> [Azure App Service 2]
+[Azure App Service 1] --> SQLPrimary
+[Azure App Service 2] --> SQLPrimary
+SQLPrimary --> SQLReplica : Replication
+[Azure App Service 1] --> RedisCache
+[Azure App Service 2] --> RedisCache
+[Azure Web App 1] --> BlobStorage
+[Azure Web App 2] --> BlobStorage
+BlobStorage --> AzureCDN
+
+[Azure Application Gateway] --> [Azure Monitor]
+[Azure Application Gateway] --> [Azure Service Health Notifications]
+@enduml
