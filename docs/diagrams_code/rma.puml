@@ -1,0 +1,29 @@
+@startuml
+title Recovery Management Architecture (RMA) for RSS Cargo
+
+actor User as "Користувач"
+node "Load Balancer" as LB {
+  [Primary Web Server] --> [Secondary Web Server]
+}
+node "Application Layer" as AppLayer {
+  [Primary App Server] --> [Secondary App Server]
+}
+node "Data Layer" as DataLayer {
+  [Primary DB Server] --> [Replica DB Server]
+  [Primary Cache] --> [Replica Cache]
+}
+node "External Dependencies" as Ext {
+  [External RSS Services]
+}
+
+User --> [Primary Web Server]
+[Primary Web Server] --> [Primary App Server]
+[Primary App Server] --> [Primary DB Server]
+[Primary App Server] --> [Primary Cache]
+[Primary App Server] --> [External RSS Services]
+
+[Primary Web Server] ..> [Secondary Web Server] : Failover
+[Primary App Server] ..> [Secondary App Server] : Failover
+[Primary DB Server] ..> [Replica DB Server] : Replication
+[Primary Cache] ..> [Replica Cache] : Replication
+@enduml

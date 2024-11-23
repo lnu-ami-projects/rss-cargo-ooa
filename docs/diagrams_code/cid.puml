@@ -1,0 +1,27 @@
+@startuml
+title Component Interaction Diagram (CID) for RSS Cargo Resiliency
+
+actor User as "Користувач"
+node "Web Server" as WebServer {
+  [Frontend (Razor Pages)] --> [Backend (ASP.NET Core)]
+}
+node "Application Server" as AppServer {
+  [Backend (ASP.NET Core)] --> [Database (PostgreSQL)]
+  [Backend (ASP.NET Core)] --> [Redis (Cache)]
+  [Backend (ASP.NET Core)] --> [External RSS Services]
+}
+node "Infrastructure" {
+  [Database (PostgreSQL)] --> [Storage]
+  [Redis (Cache)] --> [Storage]
+}
+cloud "External Services" {
+  [External RSS Services] --> [RSS Feed Providers]
+}
+
+User --> [Frontend (Razor Pages)]
+[Frontend (Razor Pages)] --> [Backend (ASP.NET Core)]
+[Backend (ASP.NET Core)] --> [Database (PostgreSQL)]
+[Backend (ASP.NET Core)] --> [Redis (Cache)]
+[Backend (ASP.NET Core)] --> [External RSS Services]
+[Database (PostgreSQL)] --> [Storage]
+@enduml
