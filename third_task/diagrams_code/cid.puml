@@ -3,25 +3,21 @@ title Component Interaction Diagram (CID) for RSS Cargo Resiliency
 
 actor User as "Користувач"
 node "Web Server" as WebServer {
-  [Frontend (Razor Pages)] --> [Backend (ASP.NET Core)]
+  [Frontend (Razor Pages)] -down-> [Backend (ASP.NET Core)] : HTTP Request/Response
 }
 node "Application Server" as AppServer {
-  [Backend (ASP.NET Core)] --> [Database (PostgreSQL)]
-  [Backend (ASP.NET Core)] --> [Redis (Cache)]
-  [Backend (ASP.NET Core)] --> [External RSS Services]
+  [Backend (ASP.NET Core)] -down-> [Database (PostgreSQL)] : SQL Queries
+  [Backend (ASP.NET Core)] -down-> [Redis (Cache)] : Cache Read/Write
+  [Backend (ASP.NET Core)] -down-> [External RSS Services] : API Requests
 }
 node "Infrastructure" {
-  [Database (PostgreSQL)] --> [Storage]
-  [Redis (Cache)] --> [Storage]
+  [Database (PostgreSQL)] -down-> [Storage] : Data Persistence
+  [Redis (Cache)] -down-> [Storage] : Cache Backup
 }
 cloud "External Services" {
-  [External RSS Services] --> [RSS Feed Providers]
+  [External RSS Services] -down-> [RSS Feed Providers] : Fetch Feeds
 }
 
-User --> [Frontend (Razor Pages)]
-[Frontend (Razor Pages)] --> [Backend (ASP.NET Core)]
-[Backend (ASP.NET Core)] --> [Database (PostgreSQL)]
-[Backend (ASP.NET Core)] --> [Redis (Cache)]
-[Backend (ASP.NET Core)] --> [External RSS Services]
-[Database (PostgreSQL)] --> [Storage]
+User -down-> [Frontend (Razor Pages)] : User Interaction
+
 @enduml
