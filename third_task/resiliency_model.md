@@ -10,10 +10,59 @@ CID (Component Interaction Diagram) демонструє основні комп
 
 ---
 
-## Recovery Management Architecture (RMA)
+## RMA Workbook for RSS Cargo Resiliency
 
-### Опис
+### Interactions
 
-RMA (Recovery Management Architecture) описує, як система відновлюється після збоїв. Вона включає резервні сервери, реплікацію даних і налаштування failover для мінімізації простоїв.
+| Interaction ID | From                   | To                     | Description                                                            |
+| -------------- | ---------------------- | ---------------------- | ---------------------------------------------------------------------- |
+| 1              | User                   | Frontend (Razor Pages) | User interacts with the frontend to initiate requests.                 |
+| 2              | Frontend (Razor Pages) | Backend (ASP.NET Core) | Frontend sends HTTP requests (GET/POST) to the backend for processing. |
+| 3              | Backend (ASP.NET Core) | Database (PostgreSQL)  | Backend queries the database for requested data.                       |
+| 4              | Backend (ASP.NET Core) | Redis (Cache)          | Backend reads/writes data to/from Redis for caching purposes.          |
+| 5              | Backend (ASP.NET Core) | External RSS Services  | Backend sends API requests to external RSS services to fetch feeds.    |
+| 6              | Database (PostgreSQL)  | Storage                | Database writes data to persistent storage for backup and recovery.    |
+| 7              | Redis (Cache)          | Storage                | Redis stores backup of cached data to persistent storage.              |
+| 8              | External RSS Services  | RSS Feed Providers     | External services provide RSS feed data to be consumed by the backend. |
 
-![Recovery Management Architecture](https://www.plantuml.com/plantuml/png/TLEzJiCm4Dxz5ATCCBGFm83QD32r4ag462g6mpbQIwvTEIwYGaZy3Bm3Ju6Oc7Y6v8rmWnN5LRp5ttq_TsTdKbaqThUHp0eh2NBY-e7C7XQeS4KRKXQcXg-59MvtXk0aNqnFuLuRo8i2PcXMcZ7arW7N5Hd02fBwi_vjNkgVvhLvQzxhx_gh-KYOqYL1CjTOGeeI5IUJ7EZp59uOmFBAY0swv1kwWuACw-8MHgDpM1R4jIgFIkpP6qwtMoauMg4Lp77lJHtQ7a9hXqQiVIcqpj1Yp_Dm733Dqj0pfxQX7jvdpv2lAMHwh8kzUBHa54h8Q4kg9CK5LMq7hlAVtL7S9RGfWbDrS63j9JZtmNso-987LiIYUnkOFKuEHuyJerCDTpqUnvu6dC4b2gdTTnWMaVfIL9gbeJAyO2_BgNk6B9muL7diI34XLRgVy0y0)
+### Possible Failures and Responses to Them
+
+| Interaction ID | Possible Failure       | Description                                                                                                               | Response/Triggered Action                                                                                                   |
+| -------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 1              | User Request Timeout   | The web server takes too long to respond to user interaction due to high traffic or system overload.                      | Notify the user of a delay and retry automatically. Monitor load and scale servers if needed.                               |
+| 2              | Database Query Failure | Database fails to return requested data due to a connection issue or resource unavailability.                             | Retry query with exponential backoff. If failure persists, serve a cached response or display "data unavailable."           |
+| 3              | Cache Read/Write Error | Redis is unavailable, leading to failed read or write operations, which affects response times.                           | Fallback to direct database queries. Alert infrastructure team and attempt cache restoration.                               |
+| 4              | API Request Timeout    | External RSS services fail to respond within the expected time frame, possibly due to service issues or network problems. | Retry the API request. If it fails multiple times, notify users about limited data availability and alert the support team. |
+| 5              | Storage Write Failure  | Failed attempt to write data to persistent storage, possibly due to hardware issues or storage limits.                    | Trigger automatic failover to a backup storage. Alert the storage management team and perform data integrity checks.        |
+
+### Rate Phase: Analyze Failures
+
+| Interaction ID | Interaction                     | Impact | Likelihood | Time to Detect (TTD) | Time to Recover (TTR) | Risk (Impact × Likelihood) |
+| -------------- | ------------------------------- | ------ | ---------- | -------------------- | --------------------- | -------------------------- |
+| 1              | User → Frontend (Razor Pages)   | Medium | High       | < 1 minute           | 5 minutes             | High                       |
+| 2              | Backend → Database (PostgreSQL) | High   | Medium     | < 5 minutes          | 15 minutes            | Medium                     |
+| 3              | Backend → Redis (Cache)         | Medium | Low        | < 1 minute           | 10 minutes            | Low                        |
+| 4              | Backend → External RSS Services | Low    | High       | < 10 minutes         | 20 minutes            | Medium                     |
+| 5              | Database → Storage              | High   | Low        | < 5 minutes          | 30 minutes            | Medium                     |
+
+### Act Phase: Mitigation Strategies
+
+1. **Scaling for High Traffic**:
+
+   - Implement auto-scaling for Web Server and Application Server to handle peak traffic.
+
+2. **Fallback Mechanisms for Database and Cache**:
+
+   - Maintain a warm backup of the database for quick failover in case of a failure.
+
+3. **External Service Failure Handling**:
+
+   - Implement retries with exponential backoff for API requests to External RSS Services.
+
+4. **Storage Redundancy**:
+
+   - Use replicated storage to prevent data loss due to hardware failures.
+
+5. **Monitoring and Alerting**:
+   - Set up monitoring for key metrics such as response times, error rates, and resource usage.
+   - Configure alerts for incidents like server overload, cache failures, and database connection issues to ensure prompt action.
