@@ -1,0 +1,47 @@
+@startuml
+!define AZURE_COLOR #0072C6
+!define BOUNDARY_COLOR RED
+
+skinparam componentStyle uml2
+skinparam rectangle {
+    BackgroundColor WHITE
+    BorderColor BLACK
+}
+
+rectangle "Local User Zone" as LUZ #WhiteSmoke {
+    component "Browser" as BR
+    database "Local Storage" as LS
+    database "Cookies" as CK
+}
+
+rectangle "Internet Boundary" as IB #LightYellow {
+    circle "API Gateway" as APIG
+}
+
+rectangle "Azure Trust Boundary" as ATB #LightBlue {
+    component "RSS Cargo Web API" as API
+    database "PostgreSQL\nDatabase" as DB
+    component "Authentication\nService" as AUTH
+    database "Redis Cache" as CACHE
+}
+
+BR --> APIG : "HTTPS Request"
+APIG --> API : "Request"
+API --> DB : "SQL Query"
+DB --> API : "SQL Response"
+API --> AUTH : "Auth Request"
+AUTH --> API : "Auth Response"
+API --> CACHE : "Cache Request"
+CACHE --> API : "Cache Response"
+API --> APIG : "Response"
+APIG --> BR : "HTTPS Response"
+
+BR ..> LS : "Store Data"
+BR ..> CK : "Store Cookies"
+
+legend right
+  Security Boundaries
+  --
+  Red lines represent trust boundaries
+endlegend
+@enduml
