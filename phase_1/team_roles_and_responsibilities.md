@@ -23,8 +23,8 @@
 
 2. Backend Developer
     - Role Overview:
-    - The Backend Developer is responsible for server-side development, database management, and ensuring seamless API
-      communication.
+      - The Backend Developer is responsible for server-side development, database management, and ensuring seamless API
+        communication.
     - Architecture & Infrastructure:
         - Design a scalable and efficient backend architecture.
         - Choose the right tech stack (e.g., ASP.NET Core, Node.js, Django, FastAPI, etc.).
