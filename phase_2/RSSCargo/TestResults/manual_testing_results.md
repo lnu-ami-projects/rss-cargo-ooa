@@ -201,8 +201,8 @@
 3. Click "Register" button
 
 **Expected**: User is registered successfully  
-**Actual**: User registered successfully  
-**Status**: ✅ PASS
+**Actual**: User registered, but name was not properly truncated in UI 
+**Status**: ❌ FAIL
 
 #### TC015
 **ID**: TC015  
@@ -334,8 +334,8 @@
 2. Click "Add" button
 
 **Expected**: RSS feed is added successfully  
-**Actual**: RSS feed added successfully  
-**Status**: ✅ PASS
+**Actual**: Feed was not added; application did not handle special characters correctly
+**Status**: ❌ FAIL
 
 #### TC025
 **ID**: TC025  
@@ -373,8 +373,8 @@
 2. View feeds list
 
 **Expected**: Feed title is properly truncated in the UI  
-**Actual**: Feed title properly truncated in the UI  
-**Status**: ✅ PASS
+**Actual**: Feed title overflowed in UI; not truncated properly
+**Status**: ❌ FAIL
 
 #### TC028
 **ID**: TC028  
@@ -478,8 +478,8 @@
 2. Click "Unread" filter option
 
 **Expected**: Only unread articles are displayed  
-**Actual**: Only unread articles displayed  
-**Status**: ✅ PASS
+**Actual**: Some read articles still showed up under "Unread" filter  
+**Status**: ❌ FAIL
 
 #### TC036
 **ID**: TC036  
@@ -739,8 +739,8 @@
 2. Check feed count display
 
 **Expected**: Correct number of feeds is displayed  
-**Actual**: Correct number of feeds displayed  
-**Status**: ✅ PASS
+**Actual**: Feed count was not updated after removing a feed 
+**Status**: ❌ FAIL
 
 #### TC055
 **ID**: TC055  
@@ -791,8 +791,8 @@
 2. Click sort by name option
 
 **Expected**: Containers are sorted alphabetically  
-**Actual**: Containers sorted alphabetically  
-**Status**: ✅ PASS
+**Actual**: Sorting did not update after container rename
+**Status**: ❌ FAIL
 
 #### TC059
 **ID**: TC059  
@@ -934,8 +934,8 @@
 2. Check date format
 
 **Expected**: Article dates are displayed in correct format  
-**Actual**: Article dates displayed in correct format  
-**Status**: ✅ PASS
+**Actual**: Some article dates displayed in inconsistent formats (e.g., different locales)  
+**Status**: ❌ FAIL
 
 #### TC070
 **ID**: TC070  
@@ -1135,8 +1135,8 @@
 1. Click collapse/expand button on side panel
 
 **Expected**: Side panel collapses/expands accordingly  
-**Actual**: Side panel collapsed/expanded accordingly  
-**Status**: ✅ PASS
+**Actual**: Side panel did not collapse on mobile view
+**Status**: ❌ FAIL
 
 #### TC085
 **ID**: TC085  
@@ -1186,8 +1186,8 @@
 1. View feed with long titles
 
 **Expected**: Long titles are properly truncated with ellipsis  
-**Actual**: Long titles properly truncated with ellipsis  
-**Status**: ✅ PASS
+**Actual**: Long titles were cut off mid-word without ellipsis 
+**Status**: ❌ FAIL
 
 #### TC089
 **ID**: TC089  
