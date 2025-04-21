@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/RSSCargo.PL.props" />
+</Project>

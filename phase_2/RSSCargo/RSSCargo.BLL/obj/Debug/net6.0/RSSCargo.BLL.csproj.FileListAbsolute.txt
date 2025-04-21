@@ -1,0 +1,16 @@
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/bin/Debug/net6.0/RSSCargo.BLL.deps.json
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/bin/Debug/net6.0/RSSCargo.BLL.dll
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/bin/Debug/net6.0/RSSCargo.BLL.pdb
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/bin/Debug/net6.0/RSSCargo.DAL.dll
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/bin/Debug/net6.0/RSSCargo.DAL.pdb
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.BLL.csproj.AssemblyReference.cache
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.BLL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.BLL.AssemblyInfoInputs.cache
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.BLL.AssemblyInfo.cs
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.BLL.csproj.CoreCompileInputs.cache
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.BLL.sourcelink.json
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.C927FF02.Up2Date
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.BLL.dll
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/refint/RSSCargo.BLL.dll
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/RSSCargo.BLL.pdb
+/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/Debug/net6.0/ref/RSSCargo.BLL.dll

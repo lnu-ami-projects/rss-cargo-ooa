@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RSSCargo.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f8981ab9f11cae85c123497b103d996c6964987")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a21d44e26521135980d29cea1a9c169a0b6ab7a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("RSSCargo.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RSSCargo.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
