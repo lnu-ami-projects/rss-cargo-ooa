@@ -1,0 +1,154 @@
+﻿@using System.Security.Claims
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="icon" type="media/image/png" href="/media/image/package.png">
+    <!-- For apple devices -->
+    <link rel="apple-touch-icon" href="/media/image/package.png"/>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow shadow-sm py-2" aria-label="Header">
+        <div class="container-fluid mx-3">
+            <a class="navbar-brand" asp-controller="Rss" asp-action="Feeds">📦 RSS Cargo</a>
+            <form class="d-flex flex-grow-1" style="max-width: 50rem" role="search" id="search-form">
+                <input class="form-control me-2" id="search-box" type="search" placeholder="Search ..." aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit" id="search-button">Search</button>
+            </form>
+            <div class="collapse navbar-collapse d-flex c1 flex-grow-0" id="navbarNav">
+                <div class="d-flex">
+                    <div class="nav-item">
+                        <span class="nav-link text-dark">@User.FindFirst(ClaimTypes.Name)!.Value</span>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Account" asp-action="UserSignOut">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="d-flex flex-grow-1 c2">
+    <nav class="d-flex flex-column" aria-label="SideMenu">
+        @* User feed side menu *@
+        <div class="sidebar border-bottom box-shadow shadow m-3 mb-2 mr-0 p-2">
+            <div class="w-100 mb-2">
+                <a asp-controller="Rss" asp-action="AddFeed" class="btn btn-outline-dark w-100" role="button">Your Feeds</a>
+            </div>
+
+            <div class="btn-group w-100 rounded" role="group">
+                <button class="btn btn-outline-dark px-0 collapsed" data-bs-toggle="collapse" data-bs-target="#feeds-collapse" aria-expanded="false">
+                    <span>&#10597;</span>
+                </button>
+                <a class="btn btn-outline-dark align-items-center w-75" asp-controller="Rss" asp-action="Feeds">
+                    Followed
+                </a>
+            </div>
+
+            <div class="collapse mt-2" id="feeds-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal small mb-0">
+                    @foreach (var (item1, item2) in (IEnumerable<Tuple<int, string>>)ViewData["UserFeeds"]!)
+                    {
+                        <li>
+                            <a asp-controller="Rss" asp-action="Feeds" asp-route-feed-id="@item1" class="link-dark rounded">
+                                @item2
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        @* Cargo feed side menu *@
+        <div class="sidebar border-bottom box-shadow shadow m-3 mt-2 mr-0 p-2">
+            <div class="w-100 mb-2">
+                <a asp-controller="Rss" asp-action="YourCargos" class="btn btn-outline-dark w-100" role="button">Your Cargos</a>
+            </div>
+
+            <div class="btn-group w-100 rounded" role="group">
+                <button class="btn btn-outline-dark px-0 collapsed" data-bs-toggle="collapse" data-bs-target="#cargos-collapse" aria-expanded="false">
+                    <span>&#10597;</span>
+                </button>
+                <a asp-controller="Rss" asp-action="CargoFeeds" class="btn btn-outline-dark w-75">
+                    Followed
+                </a>
+            </div>
+
+            <div class="collapse mt-2" id="cargos-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal small mb-0">
+                    @foreach (var (item1, item2) in (IEnumerable<Tuple<int, string>>)ViewData["UserCargos"]!)
+                    {
+                        <li>
+                            <a asp-controller="Rss" asp-action="CargoFeeds" asp-route-cargo-id="@item1" class="link-dark rounded">
+                                @item2
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="border-bottom box-shadow shadow m-3 flex-grow-1 pt-2">
+        @RenderBody()
+    </div>
+</main>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<script>
+$(document).ready(function (){
+    $("#search-form").submit(function(e){
+        e.preventDefault()
+        
+        const searchWords = $("#search-box").val().toLowerCase().split(" ")
+        
+        $(".card").each(function () {
+            const text = 
+                $(this).find(".card-header").text() + " " + 
+                $(this).find(".card-title").text() + " " + 
+                $(this).find(".card-text").text() + " " +
+                $(this).find(".card-body").text()
+            
+            const textWords = text.toLowerCase().split(" ").filter(tw => tw !== "")
+            
+            let matches = true
+            for (const searchWord of searchWords) {
+                let found = false
+                for (const textWord of textWords) {
+                    if (textWord.includes(searchWord)) {
+                        found = true
+                        break
+                    }
+                }
+                
+                if (found) {
+                    continue
+                }
+                
+                matches = false
+                break
+            }
+            
+            if (matches) {
+                $(this).show("slow")
+            } else {
+                $(this).hide("slow")
+            }
+        })
+    })
+})
+</script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

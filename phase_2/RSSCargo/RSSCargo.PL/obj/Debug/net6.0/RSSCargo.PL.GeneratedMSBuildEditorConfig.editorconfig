@@ -1,0 +1,99 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RSSCargo.PL
+build_property.RootNamespace = RSSCargo.PL
+build_property.ProjectDir = /Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Db25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Account/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Gb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Account/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Account/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Account/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Account/SuccessRegistration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TdWNjZXNzUmVnaXN0cmF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Rss/AddFeed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUnNzL0FkZEZlZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Rss/CargoFeeds.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUnNzL0NhcmdvRmVlZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Rss/Feeds.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUnNzL0ZlZWRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Rss/YourCargos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUnNzL1lvdXJDYXJnb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Shared/_NotSignedIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Ob3RTaWduZWRJbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Shared/_SignLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19TaWduTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-sfliiuz2uk

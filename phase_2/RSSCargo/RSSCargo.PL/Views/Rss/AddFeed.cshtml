@@ -1,0 +1,52 @@
+﻿@model FeedsViewModel
+
+@{
+    ViewData["Title"] = "Feeds";
+}
+@using (Html.BeginForm("AddFeed", "Rss", FormMethod.Post))
+{
+    <div class="box-shadow border-secondary shadow-sm m-3 p-3 d-flex align-items-center flex-column">
+        <label for="feed-url" class="h5">Add Feed link</label>
+        <div class="input-group mb-3 px-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="feed-url-addon">Link</span>
+            </div>
+            <input type="text" name="feedUrl" class="form-control" id="feed-url" aria-describedby="feedUrl" placeholder="Your feed link ...">
+            <button type="submit" class="btn btn btn-outline-dark ml-5">Add</button>
+        </div>
+    </div>
+}
+<div class="container-fluid px-4">
+    @if (Model.UserFeeds != null)
+    {
+        <div class="row pb-3">
+            @foreach (var item in Model.UserFeeds)
+            {
+                <div class="col-12 col-xl-6 col-xxl-4 px-2 py-2">
+                    <div class="card border-secondary shadow-sm h-100">
+                        <div class="card-header fs-5">
+                            @item.Title
+                        </div>
+                        <div class="card-body font-monospace">
+                            @item.Link
+                        </div>
+                        <div class="card-footer text-center px-2">
+                            @using (Html.BeginForm("RemoveFeed", "Rss", FormMethod.Post))
+                            {
+                                @Html.Hidden("feedUrl", item.Link)
+                                <button type="submit" class="btn w-100 btn-sm btn-outline-dark">Delete</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    @if (Model.UserFeeds == null || !Model.UserFeeds.Any())
+    {
+        <h4 class="text-center text-secondary mt-5">
+            There is no feeds right now, add them using form above
+        </h4>
+    }
+</div>

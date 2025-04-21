@@ -1,0 +1,309 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/RSSCargo.PL.csproj": {}
+  },
+  "projects": {
+    "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/RSSCargo.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/RSSCargo.BLL.csproj",
+        "projectName": "RSSCargo.BLL",
+        "projectPath": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/RSSCargo.BLL.csproj",
+        "packagesPath": "/Users/likor7/.nuget/packages/",
+        "outputPath": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/likor7/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.DAL/RSSCargo.DAL.csproj": {
+                "projectPath": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.DAL/RSSCargo.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.CodeAnalysis.Workspaces.Common": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "System.ServiceModel.Syndication": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.DAL/RSSCargo.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.DAL/RSSCargo.DAL.csproj",
+        "projectName": "RSSCargo.DAL",
+        "projectPath": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.DAL/RSSCargo.DAL.csproj",
+        "packagesPath": "/Users/likor7/.nuget/packages/",
+        "outputPath": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.DAL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/likor7/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/RSSCargo.PL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/RSSCargo.PL.csproj",
+        "projectName": "RSSCargo.PL",
+        "projectPath": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/RSSCargo.PL.csproj",
+        "packagesPath": "/Users/likor7/.nuget/packages/",
+        "outputPath": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.PL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/likor7/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/RSSCargo.BLL.csproj": {
+                "projectPath": "/Users/likor7/University/m1.2/rss-cargo-ooa/phase_2/RSSCargo/RSSCargo.BLL/RSSCargo.BLL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.3.0-dev-00792, )"
+            },
+            "Serilog.Enrichers.Process": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "Serilog.Enrichers.Thread": {
+              "target": "Package",
+              "version": "[3.2.0-dev-00752, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[4.0.0-dev-00486, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[5.2.3-dev-00262, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

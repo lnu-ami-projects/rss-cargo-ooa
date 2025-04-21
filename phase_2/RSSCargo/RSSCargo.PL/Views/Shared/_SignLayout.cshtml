@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>@ViewData["Title"]</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+        <link rel="icon" type="media/image/png" href="/media/image/package.png">
+        <!-- For apple devices -->
+        <link rel = "apple-touch-icon" href="/media/image/package.png"/>
+</head>
+<body>
+<div>
+  <header>
+      <nav class="navbar navbar-light bg-white border-bottom box-shadow shadow-sm py-2">
+          <div class="container-fluid mx-3">
+              <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">📦 RSS Cargo</a>
+          </div>
+      </nav>
+  </header>
+  
+    <main>
+        <div class="d-flex justify-content-center">
+            <div class="text-black">
+                <div class="d-flex align-items-center h-custom-2 px-sm-5 pt-sm-5 pt-xl-0 mt-xl-5 mb-sm-5">
+                    <div class="shadow p-4 rounded">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</div>
+</body>
+</html>
