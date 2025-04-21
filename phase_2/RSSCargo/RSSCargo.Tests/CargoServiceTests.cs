@@ -136,6 +136,70 @@ public class CargoServiceTests
         Assert.Equal(expectedResult, result);
     }
 
+    [Fact]
+    public void GetRssCargoFeeds_ReturnsCorrectFeedsForCargo()
+    {
+        // Arrange
+        const int cargoId = 111;
+        var cargoFeeds = GetCargoFeedsFromCargos().Where(cf => cf.CargoId == cargoId).ToList();
+        
+        _cargoRepositoryMock.Setup(repo => repo.GetCargoFeeds(cargoId)).Returns(cargoFeeds);
+        
+        // Act
+        var result = _cargoService.GetRssCargoFeeds(cargoId).ToList();
+        
+        // Assert
+        Assert.Equal(cargoFeeds.Count, result.Count);
+        for (int i = 0; i < cargoFeeds.Count; i++)
+        {
+            Assert.Equal(cargoFeeds[i].RssFeed, result[i].Link);
+        }
+    }
+
+    [Fact]
+    public void GetRssCargoFeeds_WithEmptyCargoFeeds_ReturnsEmptyCollection()
+    {
+        // Arrange
+        const int cargoId = 999;
+        _cargoRepositoryMock.Setup(repo => repo.GetCargoFeeds(cargoId)).Returns(new List<CargoFeed>());
+        
+        // Act
+        var result = _cargoService.GetRssCargoFeeds(cargoId);
+        
+        // Assert
+        Assert.Empty(result);
+    }
+
+    [Fact]
+    public void GetCargoById_ReturnsCorrectCargo()
+    {
+        // Arrange
+        const int cargoId = 111;
+        var cargos = GetCargos();
+        var expectedCargo = cargos.First(c => c.Id == cargoId);
+        
+        _cargoRepositoryMock.Setup(repo => repo.GetAllCargos()).Returns(cargos);
+        
+        // Act
+        var result = _cargoService.GetCargoById(cargoId);
+        
+        // Assert
+        Assert.Equal(expectedCargo.Id, result.Id);
+        Assert.Equal(expectedCargo.Name, result.Name);
+    }
+
+    [Fact]
+    public void GetCargoById_WithInvalidId_ThrowsException()
+    {
+        // Arrange
+        const int invalidCargoId = 999;
+        var cargos = GetCargos();
+        
+        _cargoRepositoryMock.Setup(repo => repo.GetAllCargos()).Returns(cargos);
+        
+        // Act & Assert
+        Assert.Throws<InvalidOperationException>(() => _cargoService.GetCargoById(invalidCargoId));
+    }
 
     private static List<Cargo> GetCargos()
     {

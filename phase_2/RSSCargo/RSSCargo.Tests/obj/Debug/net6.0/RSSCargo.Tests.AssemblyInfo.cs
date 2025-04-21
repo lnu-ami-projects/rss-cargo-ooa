@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RSSCargo.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a21d44e26521135980d29cea1a9c169a0b6ab7a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7995bb9bc3e73f51e6bb7e939ba37387e4584db6")]
 [assembly: System.Reflection.AssemblyProductAttribute("RSSCargo.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RSSCargo.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

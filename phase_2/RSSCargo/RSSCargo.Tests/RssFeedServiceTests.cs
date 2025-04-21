@@ -3,6 +3,7 @@ using RSSCargo.DAL.Models;
 using RSSCargo.BLL.Services.Contracts;
 using RSSCargo.BLL.Services.Rss;
 using Moq;
+using System.Xml;
 
 namespace RSSCargo.Tests;
 
@@ -61,6 +62,48 @@ public class RssFeedServiceTests
         _userFeedServiceMock.Setup(repo => repo.GetUserFeeds(userId)).Returns(rssFeedsOfUser);
 
         Assert.Throws<InvalidOperationException>(() => _rssFeedService.GetUserFeed(userId, feedId));
+    }
+
+    [Theory]
+    [InlineData("http://rss.cnn.com/rss/edition_world.rss")]
+    [InlineData("https://feeds.bbci.co.uk/news/rss.xml")]
+    public void ValidateFeed_WithValidUrl_ReturnsTrue(string validUrl)
+    {
+        // Act
+        var result = _rssFeedService.ValidateFeed(validUrl);
+
+        // Assert
+        Assert.True(result);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData(null)]
+    [InlineData("http://invalid.url/not-existing-feed.xml")]
+    [InlineData("not-a-url")]
+    [InlineData("ftp://invalid.protocol/feed.xml")]
+    public void ValidateFeed_WithInvalidUrl_ReturnsFalse(string invalidUrl)
+    {
+        // Act
+        var result = _rssFeedService.ValidateFeed(invalidUrl);
+
+        // Assert
+        Assert.False(result);
+    }
+
+    [Fact]
+    public void GetUserFeeds_WithEmptyUserFeeds_ReturnsEmptyCollection()
+    {
+        // Arrange
+        const int userId = 999;
+        var emptyFeedCollection = new List<UserFeed>();
+        _userFeedServiceMock.Setup(repo => repo.GetUserFeeds(userId)).Returns(emptyFeedCollection);
+
+        // Act
+        var result = _rssFeedService.GetUserFeeds(userId);
+
+        // Assert
+        Assert.Empty(result);
     }
 
     private static IEnumerable<UserFeed> GetFeedsOfUser()
