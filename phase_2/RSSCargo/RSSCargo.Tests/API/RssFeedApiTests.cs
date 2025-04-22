@@ -103,7 +103,7 @@ namespace RSSCargo.Tests.API
             var removeRequest = CreateAuthorizedRequest($"/api/rss/feeds/{feedToRemove.Id}", Method.Delete);
 
             // Act
-            var response = await Client.ExecuteDeleteAsync(removeRequest);
+            var response = await Client.ExecuteAsync(removeRequest);
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -124,7 +124,7 @@ namespace RSSCargo.Tests.API
             var request = CreateAuthorizedRequest($"/api/rss/feeds/{invalidFeedId}", Method.Delete);
 
             // Act
-            var response = await Client.ExecuteDeleteAsync(request);
+            var response = await Client.ExecuteAsync(request);
 
             // Assert
             Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
