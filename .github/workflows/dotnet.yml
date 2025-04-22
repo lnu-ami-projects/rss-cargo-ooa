@@ -35,14 +35,17 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
+      - name: Navigate to solution directory
+        run: cd phase_2/RSSCargo
+
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore phase_2/RSSCargo/RSSCargo.sln
 
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build phase_2/RSSCargo/RSSCargo.sln --no-restore
 
       - name: Test
-        run: dotnet test --settings test.runsettings --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
+        run: dotnet test phase_2/RSSCargo/RSSCargo.sln --settings phase_2/RSSCargo/test.runsettings --no-build --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
