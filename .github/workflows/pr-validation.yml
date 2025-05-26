@@ -2,8 +2,8 @@ name: PR Validation
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: ["main", "master", "develop"]
+    types: [ opened, synchronize, reopened ]
+    branches: [ "main", "master", "develop" ]
 
 jobs:
   validate:
@@ -12,26 +12,26 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Fetches all history for all branches and tags
-      
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
-      
+
       - name: Restore dependencies
         run: dotnet restore
-      
+
       - name: Build
         run: dotnet build --no-restore
-      
+
       - name: Test
         run: dotnet test --no-build --verbosity normal --filter Category!=IntegrationTest
-      
+
       - name: .NET Format
         run: |
           dotnet tool install -g dotnet-format
           dotnet format --verify-no-changes --verbosity diagnostic
-      
+
       - name: Check for test coverage decrease
         uses: codecov/codecov-action@v3
         with:

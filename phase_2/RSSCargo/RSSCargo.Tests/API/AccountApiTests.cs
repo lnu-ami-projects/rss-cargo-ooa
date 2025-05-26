@@ -1,4 +1,5 @@
 using System.Net;
+using Newtonsoft.Json;
 using RestSharp;
 
 
@@ -142,7 +143,7 @@ namespace RSSCargo.Tests.API
         {
             // Note: This test is a placeholder as the actual reset password functionality would
             // require a valid token from email which is hard to test automatically
-            
+
             // Arrange
             var request = new RestRequest("/api/account/reset-password");
             request.AddJsonBody(new
@@ -179,7 +180,7 @@ namespace RSSCargo.Tests.API
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            
+
             // Change it back for other tests
             var resetRequest = CreateAuthorizedRequest("/api/account/change-password", Method.Post);
             resetRequest.AddJsonBody(new
@@ -221,13 +222,13 @@ namespace RSSCargo.Tests.API
                 Email = "test_user@example.com",
                 Password = "Test123!"
             });
-            
+
             var loginResponse = await Client.ExecutePostAsync(loginRequest);
             var loginResult = JsonConvert.DeserializeObject<LoginResponse>(loginResponse.Content);
-            
+
             // Make sure we have a refresh token
             Assert.NotNull(loginResult.RefreshToken);
-            
+
             // Now try to refresh the token
             var refreshRequest = new RestRequest("/api/account/refresh-token");
             refreshRequest.AddJsonBody(new
@@ -238,10 +239,10 @@ namespace RSSCargo.Tests.API
 
             // Act
             var response = await Client.ExecutePostAsync(refreshRequest);
-            
+
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            
+
             var refreshResult = JsonConvert.DeserializeObject<LoginResponse>(response.Content);
             Assert.NotNull(refreshResult);
             Assert.NotNull(refreshResult.Token);
